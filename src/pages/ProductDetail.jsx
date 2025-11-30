@@ -15,6 +15,8 @@ const ProductDetail = () => {
     const [selectedStorage, setSelectedStorage] = useState('');
     const [adding, setAdding] = useState(false);
 
+    const hasPrice = product?.price && product.price !== '';
+
     useEffect(() => {
         if (product) {
             if (product.options?.colors?.length > 0) {
@@ -27,7 +29,7 @@ const ProductDetail = () => {
     }, [product]);
 
     const handleAddToCart = async () => {
-        if (!selectedColor || !selectedStorage) return;
+        if (!hasPrice || !selectedColor || !selectedStorage) return;
 
         try {
             setAdding(true);
@@ -66,7 +68,7 @@ const ProductDetail = () => {
                             <h1 className={styles.model}>{product.model}</h1>
                             <h2 className={styles.brand}>{product.brand}</h2>
                             <p className={styles.price}>
-                                {product.price ? `${product.price} €` : 'Price not available'}
+                                {hasPrice ? `${product.price} €` : 'Price not available'}
                             </p>
                         </div>
 
@@ -114,10 +116,10 @@ const ProductDetail = () => {
 
                             <Button
                                 onClick={handleAddToCart}
-                                disabled={adding || !selectedColor || !selectedStorage}
+                                disabled={adding || !selectedColor || !selectedStorage || !hasPrice}
                                 className={styles.addButton}
                             >
-                                {adding ? 'Adding...' : 'Add to Cart'}
+                                {adding ? 'Adding...' : (hasPrice ? 'Add to Cart' : 'Not Available')}
                             </Button>
                         </div>
                     </div>
