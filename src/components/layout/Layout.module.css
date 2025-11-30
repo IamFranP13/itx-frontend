@@ -2,8 +2,15 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--color-bg-main);
 }
 
 .main {
     flex: 1;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
 }

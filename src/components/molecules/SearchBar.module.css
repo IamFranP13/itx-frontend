@@ -1,15 +1,16 @@
 .container {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 1rem;
+    width: 100%;
 }
 
 .inputWrapper {
     width: 100%;
+    position: relative;
 }
 
 @media (min-width: 768px) {
     .inputWrapper {
-        width: 16rem;
+        width: 20rem;
     }
 }

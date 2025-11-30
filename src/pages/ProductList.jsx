@@ -29,7 +29,9 @@ const ProductList = () => {
     return (
         <div className={styles.page}>
             <div className={styles.container}>
-                <SearchBar value={searchTerm} onChange={setSearchTerm} />
+                <div className={styles.controls}>
+                    <SearchBar value={searchTerm} onChange={setSearchTerm} />
+                </div>
 
                 {filteredProducts.length === 0 ? (
                     <div className={styles.empty}>No products found.</div>
