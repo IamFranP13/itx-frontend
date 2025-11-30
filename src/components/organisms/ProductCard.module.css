@@ -1,0 +1,69 @@
+.link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+    position: relative;
+    height: 12rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image {
+    max-height: 100%;
+    max-width: 100%;
+    transition: transform 0.3s;
+}
+
+.link:hover .image {
+    transform: scale(1.05);
+}
+
+.content {
+    margin-top: auto;
+}
+
+.brand {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    margin: 0;
+}
+
+.model {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #111827;
+    margin: 0;
+}
